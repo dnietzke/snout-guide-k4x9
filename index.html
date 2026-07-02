@@ -942,7 +942,7 @@
       <tr><th>Tab</th><th>What it shows</th><th>Used for</th></tr>
       <tr><td><b>Summary</b></td><td>Plans sold per hospital by month, plus standing counts of active, overdue, and cancelled members. Totals reconcile on every row.</td><td>Adoption and growth at a glance, per hospital and across the group.</td></tr>
       <tr><td><b>Members</b></td><td>The full enrollment roster per hospital: owner, pet, plan, status, and dates, with the <b>client and pet PIMS IDs</b>.</td><td>Knowing exactly who is enrolled and reconciling members to your client records.</td></tr>
-      <tr><td><b>Charges</b></td><td>Every transaction, with our <b>PR id</b> and the <b>PIMS invoice id</b>, the invoice amount, covered vs non-covered, our fees, processing fees, and the payout.</td><td>Transaction-level reconciliation against your billing.</td></tr>
+      <tr><td><b>Charges</b></td><td>Every transaction, with our <b>PR id</b> and the <b>PIMS invoice id</b>: the invoice total split into covered and non-plan, any paid-in-clinic amount, the 5% and 2% fees broken out, processing fees, and the payout.</td><td>Transaction-level reconciliation against your billing.</td></tr>
       <tr><td><b>Unused Benefits</b></td><td>Utilization per member: what the plan includes, what has been used, and what remains.</td><td>Spotting members to bring back in, and understanding plan usage.</td></tr>
       <tr><td><b>Payout Summary</b></td><td>One line per completed payout: hospital, date paid, amount, and the bank transaction number.</td><td>Tying each Snout payout to your bank deposits.</td></tr>
     </table>
@@ -955,14 +955,13 @@
     </table></div>
     <p class="mscap">The Members tab, from a real group report: client and pet names changed, everything else as delivered. Note the PIMS IDs, one clinic on a UUID-based system and one numeric, both join back to your records.</p>
     <div class="minisheet"><table>
-      <tr><th>Clinic</th><th>Date</th><th>Client</th><th>Patient</th><th>PIMS Invoice ID</th><th>Invoice</th><th>Snout fees</th><th>Payout</th></tr>
-      <tr><td>Clinic 1</td><td>Apr 25</td><td>Tessa Brooks</td><td>Georgie</td><td>ade23710&hellip;</td><td>$1,414.28</td><td>$21.75</td><td>$1,392.53</td></tr>
-      <tr><td>Clinic 2</td><td>Apr 24</td><td>Dan Foster</td><td>Banjo</td><td>75c45e90&hellip;</td><td>$140.00</td><td>$2.50</td><td>$137.50</td></tr>
-      <tr><td>Clinic 3</td><td>Apr 24</td><td>Priya Nair</td><td>Lily</td><td>85c1a3d5&hellip;</td><td>$376.43</td><td>$18.82</td><td>$357.61</td></tr>
-      <tr><td>Clinic 1</td><td>Apr 24</td><td>Mia Sandoval</td><td>Ozzy</td><td>ead0c37e&hellip;</td><td>$314.51</td><td>$2.50</td><td>$312.01</td></tr>
-      <tr><td>Clinic 2</td><td>Apr 24</td><td>Leah Grant</td><td>Ollie</td><td>0ae00723&hellip;</td><td>$985.60</td><td>$38.28</td><td>$947.32</td></tr>
+      <tr><th>Clinic</th><th>PIMS Invoice ID</th><th>Invoice total</th><th>Covered</th><th>Non-plan</th><th>Paid in clinic</th><th>Snout fee (5%)</th><th>Non-plan fee (2%)</th><th>Payout</th></tr>
+      <tr><td>Clinic 1</td><td>ade23710&hellip;</td><td>$228.40</td><td>$228.40</td><td>$0.00</td><td>$0.00</td><td>$11.42</td><td>$0.00</td><td>$216.98</td></tr>
+      <tr><td>Clinic 2</td><td>75c45e90&hellip;</td><td>$350.00</td><td>$250.00</td><td>$100.00</td><td>$0.00</td><td>$12.50</td><td>$2.00</td><td>$335.50</td></tr>
+      <tr><td>Clinic 1</td><td>85c1a3d5&hellip;</td><td>$615.29</td><td>$377.92</td><td>$237.37</td><td>$237.37</td><td>$18.90</td><td>$0.00</td><td>$359.02</td></tr>
+      <tr><td>Clinic 3</td><td>ead0c37e&hellip;</td><td>$140.00</td><td>$140.00</td><td>$0.00</td><td>$0.00</td><td>$7.00</td><td>$0.00</td><td>$133.00</td></tr>
     </table></div>
-    <p class="mscap">The Charges tab, same report: every transaction with the PIMS invoice id, the fee actually applied, and the payout, so your team reconciles line by line.</p>
+    <p class="mscap">The Charges tab, row by row: invoice total splits into covered and non-plan, the 5% fee applies only to covered items, the 2% fee only to non-plan items charged through Snout, and anything paid in clinic stays with the clinic and carries no fee. Payout = covered less 5%, plus card-charged non-plan less 2%. Every row reconciles, and the third row is the same split invoice shown in Payments &amp; Receipts.</p>
     <p>Before you are live, we will walk your data and finance teams through a sample workbook with representative data, tab by tab, in a working session. You get the file, run your own joins against it, and come back with questions before a single real row exists.</p>
 
     <h2>The weekly payout report</h2>
